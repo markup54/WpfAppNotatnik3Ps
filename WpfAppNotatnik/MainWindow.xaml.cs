@@ -158,5 +158,10 @@ namespace WpfAppNotatnik
                     break;
             }
         }
+
+        private void MenuItem_Click_Wybirz_Kolor(object sender, RoutedEventArgs e)
+        {
+            
+        }
     }
 }

@@ -44,6 +44,8 @@
                     <MenuItem Header="niebieska" Click="MenuItem_Click_KolorCZcionki"/>
                     <MenuItem Header="zielona" Click="MenuItem_Click_KolorCZcionki"/>
                     <MenuItem Header="czerwona" Click="MenuItem_Click_KolorCZcionki"/>
+                    <MenuItem Header="wybierz..." Click="MenuItem_Click"/>
+                   
                 </MenuItem>
                 <MenuItem Header="Kolor tła"></MenuItem>
             </MenuItem>
