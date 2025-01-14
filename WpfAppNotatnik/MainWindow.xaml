@@ -8,9 +8,13 @@
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
         <Menu DockPanel.Dock="Top">
-            <MenuItem Header="Plik">
-                <MenuItem Header="Nowy"></MenuItem>
-                <MenuItem Header="Otwórz"></MenuItem>
+            <MenuItem Header="P_lik">
+                <MenuItem Header="Nowy"
+                          Click="MenuItem_Click_Nowy"
+                          ></MenuItem>
+                <MenuItem Header="Otwórz"
+                          Click="MenuItem_Click_Otworz"
+                          ></MenuItem>
                 <MenuItem Header="Zapisz"
                           Click="MenuItem_Click_Zapisz"
                           ></MenuItem>
@@ -20,25 +24,34 @@
                 <MenuItem Header="Drukuj"></MenuItem>
                 <MenuItem Header="Zamknij"></MenuItem>
             </MenuItem>
-            <MenuItem Header="Edycja">
-                <MenuItem Header="Kopiuj"></MenuItem>
-                <MenuItem Header="Wytnij"></MenuItem>
-                <MenuItem Header="Wklej"></MenuItem>
-                <MenuItem Header="Cofnij"></MenuItem>
+            <MenuItem Header="_Edycja">
+                <MenuItem Header="Kopiuj"
+                          Command="ApplicationCommands.Copy"
+                          ></MenuItem>
+                <MenuItem Header="_Wytnij" Command="ApplicationCommands.Cut"></MenuItem>
+                <MenuItem Header="W_klej" Command="ApplicationCommands.Paste"></MenuItem>
+                <MenuItem Header="Cofnij" Command="ApplicationCommands.Undo"></MenuItem>
                 <MenuItem Header="Zamień"></MenuItem>
                 <MenuItem Header="Wyczyść"></MenuItem>
             </MenuItem>
             <MenuItem Header="Format">
-                <MenuItem Header="Rozmiar czcionki"></MenuItem>
+                <MenuItem Header="Rozmiar czcionki">
+                    <MenuItem Header="++" Click="MenuItem_Click_Zwieksz_czcionke"/>
+                    <MenuItem Header="--" Click="MenuItem_Click_Zmiejsz_Czcionke"/>
+                </MenuItem>
                 <MenuItem Header="Font"></MenuItem>
-                <MenuItem Header="Kolor czcionki"></MenuItem>
+                <MenuItem Header="Kolor czcionki">
+                    <MenuItem Header="niebieska" Click="MenuItem_Click_KolorCZcionki"/>
+                    <MenuItem Header="zielona" Click="MenuItem_Click_KolorCZcionki"/>
+                    <MenuItem Header="czerwona" Click="MenuItem_Click_KolorCZcionki"/>
+                </MenuItem>
                 <MenuItem Header="Kolor tła"></MenuItem>
             </MenuItem>
             <MenuItem Header="Informacje">
                 <MenuItem Header="Informacje o autorze" 
                           Click="MenuItem_Click_info_autor"/>
                 <MenuItem Header="Informacje o notatniku"
-                          Click="MenuItem_Click"
+                          Click="MenuItem_Click_Info_Aplikacja"
                           
                           />
             </MenuItem>
@@ -51,6 +64,10 @@
                    Text="{Binding ElementName=tekstNotatnikaTextBox, Path=Text}">
         
         </TextBlock>
-        <TextBox x:Name="tekstNotatnikaTextBox"></TextBox>
+        <TextBox x:Name="tekstNotatnikaTextBox"
+                 TextWrapping="WrapWithOverflow"
+                 AcceptsReturn="True"
+                 VerticalScrollBarVisibility="Auto"
+                 ></TextBox>
     </DockPanel>
 </Window>
